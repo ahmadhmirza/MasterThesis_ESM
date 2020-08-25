@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HyAPI-ImageIntegrationDemo</title>
+        <style type="text/css">
+            .paintings-table {
+                border-style: solid;
+                border-width: 1px;
+            }
+            </style>
+    </head>
+    <body>
+        <section>
+                <h1>HyAPI</h1>
+        </section>
+
+        <section class="Intro">
+            <p> This web page demos image integration capabilities using RESTful APIs. In the table the images are populated using jinja parameters. Clicking the images
+			redirects to the image being served using RESTful API endpoint.
+            </p>
+            <p> * ------ * ------ * ------ *</p>    
+        </section>
+        
+        <section class="PostLinks">
+            <div style="position: relative; left: 23px; top: 36px">
+                <h2 style="position: absolute; left: -10px; top: -15px; width: 1137px; height: 45px; z-index: 1;">Paintings</h1>
+                <table class="paintings-table" style="width: 603px; height: 267px; position: absolute; top: 51px; left: 25px">
+                    <thead>
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <th class="paintings-table" style="height: 300px; width:200px"><a  href="http://localhost:5000/hyapi/service/showImages/1"><img src="{{ img1 }}"></a></th>
+                            <th class="paintings-table" style="height: 300px; width:200px"><a href="http://localhost:5000/hyapi/service/showImages/2"><img src="{{ img2 }}"></a></th>
+                            <th class="paintings-table" style="height: 300px; width:200px"><a href="http://localhost:5000/hyapi/service/showImages/3"><img src="http://localhost:5000/hyapi/service/showImages/3"></a></th>
+                        </tr>
+                        <tr>
+                            <th class="paintings-table" style="height: 50px; width:200px">One</th>
+                            <th class="paintings-table" style="height: 50px; width:200px">Two</th>
+                            <th class="paintings-table" style="height: 50px; width:200px">Three</th>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+        <br>
+    </body
