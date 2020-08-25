@@ -1,0 +1,16 @@
+{
+    "File-ID": {
+        "FileName": "FileName",
+        "FileType": "FileType",
+        "FileID"  : "Generated File ID",
+        "Access-id": "API-Key for customer identification",
+        "timeStamp": "Time of generation of api key"
+    },
+    "a39e19528a3d89ed45ace1ac45f83eda": {
+        "FileName": "fc7d852c-e94a-41e3-96bd-c3f01f551d41.png",
+        "FileType": "PNG",
+        "FileID": "a39e19528a3d89ed45ace1ac45f83eda",
+        "Access-id": "a1fd7f7a9d4598a64139c1e8032e6269",
+        "timeStamp": "2020-05-11 10:43:54"
+    }
+}

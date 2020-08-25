@@ -1,0 +1,29 @@
+{
+    "3b306927-24b6-4546-98d7-5df58a732e54": {
+        "WorkFlowID": "ddb124aeae9512004df062a7b211b959",
+        "ContainerID": "NA",
+        "BaseModel": "NI",
+        "RequestID": "3b306927-24b6-4546-98d7-5df58a732e54",
+        "Status": "Error(s) encountered while starting the training job.",
+        "HttpResponse": 500,
+        "timeStamp": "2020-05-30 14:50:05"
+    },
+    "2ac0a640-dbaa-46eb-8cd2-0ca3784d5909": {
+        "WorkFlowID": "ddb124aeae9512004df062a7b211b959",
+        "ContainerID": "675f759b28c638016f6fea19338208da612556f14f490a6e83d9f51ee33469b6",
+        "BaseModel": "NI",
+        "RequestID": "2ac0a640-dbaa-46eb-8cd2-0ca3784d5909",
+        "Status": "Training process started, Model will be available for export once this process finishes.",
+        "HttpResponse": 201,
+        "timeStamp": "2020-05-30 15:00:02"
+    },
+    "f0eb8db9-1d5e-46c1-b3ae-5203714fb16f": {
+        "WorkFlowID": "ddb124aeae9512004df062a7b211b959",
+        "ContainerID": "c1b14479aacc00b1d27c42b71b1f0fbd30162589d69840a6ada28176591c1c81",
+        "BaseModel": "NI",
+        "RequestID": "f0eb8db9-1d5e-46c1-b3ae-5203714fb16f",
+        "Status": "Training process started, Model will be available for export once this process finishes.",
+        "HttpResponse": 201,
+        "timeStamp": "2020-05-30 15:01:53"
+    }
+}

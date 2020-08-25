@@ -1,0 +1,20 @@
+{
+    "AccessID-Shared with customer - HMAC of username+Secret key": {
+        "customer": "Customer's Name",
+	"company": "Company Name",
+	"department": "Department Name",
+	"emailAddr": "email address",
+        "userName": "user name",
+        "password": "hmac of password-string + secret key",
+        "encodingKey": "generated encoding key - hash of api key"
+    },
+    "a1fd7f7a9d4598a64139c1e8032e6269": {
+        "customer": "Ahmad Mirza",
+        "company": "Bosch",
+        "department": "PS-EC/ECC",
+        "emailAddr": "ahmadhassan.mirza@gmail.com",
+        "userName": "mir6si",
+        "password": "30fc5426270b19cbdc668302ea90a18b",
+        "encodingKey": "ffd5935abbd97d383dd4d80987d61c03"
+    }
+}

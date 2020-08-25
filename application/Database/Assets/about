@@ -1,0 +1,5 @@
+* workflow_template.zip holds the directory structure for user workspaces. 
+
+* When a new user signs up, a dedicated workspace is created for him at application/Database/Assets/<accessID>
+
+* This zip file is extracted to that path.
