@@ -1,0 +1,29 @@
+/*
+ * This is the CSS stylesheet for the UserProfile.html page
+ */
+
+/* Following two tags combined to make the background image scalable*/
+body, html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../assets/background-image.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Home {
+  padding-top: 100px;
+  padding-left: 400px;
+  padding-right: 800px;
+}
+
+  

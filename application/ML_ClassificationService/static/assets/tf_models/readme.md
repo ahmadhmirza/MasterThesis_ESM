@@ -1,0 +1,6 @@
+The following zip files must be placed in this directory:
+
+*ssd_inception_v2_coco.tar.gz 
+	(http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz)
+
+* The file must be in .zip format .tar.gz is not supported.

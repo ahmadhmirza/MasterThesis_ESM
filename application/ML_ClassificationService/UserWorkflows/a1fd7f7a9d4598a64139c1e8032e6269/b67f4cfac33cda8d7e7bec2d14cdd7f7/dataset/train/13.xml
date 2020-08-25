@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>13.jpg</filename>
+	<path>/home/ahmad/Desktop/ObjectDetection/tensorflow/workspace/training/images/train/13.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>650</width>
+		<height>532</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>stop</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>418</xmin>
+			<ymin>29</ymin>
+			<xmax>557</xmax>
+			<ymax>174</ymax>
+		</bndbox>
+	</object>
+</annotation>

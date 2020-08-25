@@ -1,0 +1,13 @@
+{
+    "a1fd7f7a9d4598a64139c1e8032e6269": {
+        "b67f4cfac33cda8d7e7bec2d14cdd7f7": {
+            "workflow_Name": "Test_Workflow_3",
+            "workflow_ID": "b67f4cfac33cda8d7e7bec2d14cdd7f7",
+            "process_ID": "3e2ef0b771d0de74783c1a6709ff8b5fbfdc0a4dcbb6753ab4c7bafc3857ca29",
+            "process_Status": "Training started.",
+            "baseModel": "ssd_inception_v2_coco.zip",
+            "dataSet": "empty",
+            "timeStamp": "2020-07-22 12:12:09"
+        }
+    }
+}
