@@ -1,0 +1,2 @@
+source /home/ahmad/Desktop/EsmThesis/venv/bin/activate
+
