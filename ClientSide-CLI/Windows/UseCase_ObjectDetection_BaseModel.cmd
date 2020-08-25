@@ -29,8 +29,6 @@ set /p API_URL=<.\config\base_url.cfg
 set /p outputPath=<.\config\output_directory.cfg
 rem ==== URLs for File Upload services ======
 set uploadURL=!API_URL!/upload?
-rem ==== URLs for Service : CAN_CONF_CHECK ====
-set ccService_URL=!API_URL!/service/can-config-test?
 rem ==== URLs for File Download services ======
 set fileID=NA
 
@@ -39,7 +37,7 @@ rem set chkFileStatus_URL=!API_URL!/checkFileStatus/
 set download_URL=!API_URL!/download
 
 rem ==== URLs for the service ======
-set Service_URL=!API_URL!/service/generate-uml?
+set Service_URL=!API_URL!/service/process-image?
 
 rem ==== USER SPECIFIC ACCESS CREDENTIALS ====
 set /p ACCESS_ID=<.\config\cred_access_id.cfg
@@ -47,9 +45,9 @@ set /p ENCODING_KEY=<.\config\cred_encoding_key.cfg
 
 
 rem ==== Output Files ==== 
-set LogFile=%outputPath%\UML_Gen.log
+set LogFile=%outputPath%\ObjDet_CLI_Log.log
 set tempFile=%outputPath%\tmp.txt
-set outFile=%outputPath%\Generated_UML_Model.png
+set outFile=%outputPath%\ObjDet_Result.png
 goto :MAIN
 
 rem This function informs the user if any of the required arguments are missing from the command
@@ -79,7 +77,7 @@ rem This function is called if any error occus while the file download process.
 rem Main funciton 
 :MAIN
 rem One required input parameter = path to the source text file with uml description.
-if "%~1"=="" (goto EXIT_INPUT_ISSUE) else (set UmlDia_Description="%1")
+if "%~1"=="" (goto EXIT_INPUT_ISSUE) else (set input_image="%1")
 
 echo ":::::UML_DIAGRAM_GENERATION_DEMO:::::">!LogFile!
 echo ::::UML_DIAGRAM_GENERATION_DEMO::::
@@ -107,7 +105,7 @@ if !serverStatus! neq 1 (
 	echo Generating Files' signatures.>>!LogFile!
 	echo Generating Files' signatures
 	rem generate the signature for the file to be uploaded
-	Call %PYTHON_PATH%\python.exe %SCRIPT_PATH%\util_Generate_Signature.py %UmlDia_Description% %ENCODING_KEY%>!tempFile!
+	Call %PYTHON_PATH%\python.exe %SCRIPT_PATH%\util_Generate_Signature.py %input_image% %ENCODING_KEY%>!tempFile!
 	for /f "tokens=*" %%a in (!tempFile!) do (
 		set FILE_SIGNATURE=%%a
 		goto :got_file_signature
@@ -124,9 +122,9 @@ if !serverStatus! neq 1 (
 	echo *********************************************
 
 
-	echo "Uploading diagram description file">>!LogFile!
-	echo "Uploading diagram description file"
-	curl -i -k -F hyapifile=@%UmlDia_Description% "%uploadURL%access-id=%ACCESS_ID%&signature=%FILE_SIGNATURE%">!tempFile!
+	echo "Uploading input image to server.">>!LogFile!
+	echo "Uploading input image to server."
+	curl -i -k -F hyapifile=@%input_image% "%uploadURL%access-id=%ACCESS_ID%&signature=%FILE_SIGNATURE%">!tempFile!
 	
 	rem -----
 	for /f "tokens=1,2 delims=:{}, " %%a in (!tempFile!) do (
@@ -149,11 +147,11 @@ if !serverStatus! neq 1 (
 	
 if !errorlevel! neq 0 goto EXIT_FILEUPLOAD_ERROR
 
-echo Generating UML diagram.>>!LogFile!
-echo Generating UML diagram.
+echo Performing object detetion using base model.>>!LogFile!
+echo Performing object detetion using base model.
 curl -X POST %Service_URL%access-id=%ACCESS_ID% -H "Content-type:application/json" -d "{\"InputFileID\":\"!up_FileID!\"}">!tempFile!
 for /f "tokens=1,2 delims=:{}, " %%x in (!tempFile!) do (
-	if %%~x==FileID (
+	if %%~x==Out_FileID (
 		set results_FileID=%%~y
 		echo "Output FileID received from the server.">>!LogFile!
 		echo "Output FileID received from the server."
@@ -163,11 +161,11 @@ for /f "tokens=1,2 delims=:{}, " %%x in (!tempFile!) do (
 :service_execution_success
 DEL !tempFile!
 
-echo Downloading generated file to local directory>>!LogFile!
-echo Downloading generated file to local directory...
+echo Downloading results to local directory>>!LogFile!
+echo Downloading results to local directory...
 curl -X GET !download_URL!/!results_FileID!?access-id=!ACCESS_ID! -o !outFile!
-echo Results saved in "Output.png" file.>>!LogFile!
-echo Results saved in "Output.png" file.
+echo Results saved to disk.>>!LogFile!
+echo Results saved in disk.
 
 :EOF
 echo Script executed successfully.>>!LogFile!

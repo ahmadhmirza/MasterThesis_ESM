@@ -1,0 +1,5 @@
+upload_file_client.cmd C:\Users\MIR6SI\Desktop\upload_samples\test1.jpg
+
+UseCase_CAN_Config_Test.cmd C:\Users\MIR6SI\Documents\HyAPI\ClientSide-CLI\Windows\example_inputs\dummy.a2l C:\Users\MIR6SI\Documents\HyAPI\ClientSide-CLI\Windows\example_inputs\dummy.xlsx
+
+UseCase_Compu_Method.cmd C:\Users\MIR6SI\Documents\HyAPI\application\CompuMethodsService\static\_in\test.a2l C:\Users\MIR6SI\Documents\HyAPI\application\CompuMethodsService\static\_in\frm_config_SWSCust.xlsx

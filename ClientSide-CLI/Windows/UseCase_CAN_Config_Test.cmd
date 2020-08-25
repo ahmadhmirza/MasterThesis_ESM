@@ -27,6 +27,8 @@ set SCRIPT_PATH=%~dp0\helper_scripts
 rem The base URL for the server is to be set here.
 set /p API_URL=<.\config\base_url.cfg
 
+set /p outputPath=<.\config\output_directory.cfg
+
 echo !API_URL!
 rem ==== URLs for File Upload services ======
 set uploadURL=!API_URL!/upload?
@@ -44,10 +46,12 @@ set /p ENCODING_KEY=<.\config\cred_encoding_key.cfg
 
 rem Specify the path to where the output recieved from the server should be stored.
 rem Client side paths:
+
+
 rem ==== Output Files ==== 
-set LogFile=%~dp0\example_outputs\CCTEST_LOG.log
-set tempFile=%~dp0\example_outputs\tmp.txt
-set outFile=%~dp0\example_outputs\CC_TEST_RESULTS.txt
+set LogFile=%outputPath%\CCTEST_LOG.log
+set tempFile=%outputPath%\tmp.txt
+set outFile=%outputPath%\CC_TEST_RESULTS.txt
 goto :MAIN
 
 rem This function informs the user if any of the required arguments are missing from the command
