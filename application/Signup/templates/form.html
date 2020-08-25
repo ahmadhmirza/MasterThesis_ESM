@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DcCard || Welcome to the future!</title>
+    <!-- Adding local style sheet -->
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- to adapt content position accoding to screen size-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <a class="navbar-brand" href="#">DC^2</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href={{home_addr}}>Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href={{signin_addr}}>Sign in</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href={{signup_addr}}>Sign up</a>
+            <!--a class="nav-link disabled" href="#">Sign up</a>  To disable an icon-->
+          </li>
+        </ul>
+        <!-- TODO -->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+  </nav>
+
+    <div class="bg">
+    {% block content %}
+      <div class="form-group ">
+        <h1>New User Registration</h1>
+        <h2>Signup Form</h2>
+        <form class="form-vertical" method="POST" action="/signup/" enctype="multipart/form-data">
+          {{ form.hidden_tag() }}
+          <p>
+            <label >{{ form.lName.label }}</label>
+            <p>{{ form.lName }}</p>
+          </p>
+
+          <p>
+            <label >{{ form.fName.label }}</label>
+            <p>{{ form.fName }}</p>
+          </p>
+
+          <p>
+            <label >{{ form.password.label }}</label>
+            <p>{{ form.password }}</p>
+          </p>
+
+          <p>
+            <label >{{ form.socialLinks.label }}</label>
+            <p>{{ form.socialLinks }}</p>
+          </p>
+
+          <p>
+            <label >{{ form.catchPhrase.label }}</label>
+            <p>{{ form.catchPhrase }}</p>
+          </p>
+
+          <p>
+            <label >{{ form.profilePhoto.label }}</label>
+            <p>{{ form.profilePhoto }}</p>
+          </p>
+
+          <div class="submit-btn">{{ form.submit() }}</div>
+          <div> {% if form.errors %}
+                {{ form.errors }}
+                {% endif %}</div>
+        </form>
+      </div>
+    {% endblock %}
+  </div>      
+</body>
+
+</html>

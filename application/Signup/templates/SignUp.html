@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DcCard || Welcome to the future!</title>
+    <!-- Adding local style sheet -->
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/signup.css') }}">
+
+    <!-- to adapt content position accoding to screen size-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div class="bg">
+        <form class="form-vertical" action="/signup/register-user" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <h1>New User Registration</h1>
+                <h2>Signup Form</h2>
+                <p>
+                    <label >Last Name:</label>
+                    <p><input type  = "text"
+                              id    = "lName"
+                              placeholder = "Please enter your last name" /></p>
+                </p>
+                <p>
+                    <label>First Name:</label>
+                    <p><input type  = "text"
+                              id    = "fName"
+                              placeholder = "Please enter your first name" /></p>
+                </p>
+                <p>
+                    <label>Password:</label>
+                    <p><input type  = "Password "
+                              id    = "Password"
+                              placeholder = "Please enter your password" /></p>
+                </p>
+                <p>
+                    <label>Catch Phrase (optional):</label>
+                    <p><input type  = "text "
+                              id    = "cPhrase"
+                              placeholder = "Your catch phrase here. ;)" /></p>
+                </p>
+
+                <h3>Please select an image.</h3>
+        
+                <div class="custom-file">
+                  <input type = "file" class="custom-file-input" name="image" id="image" oninput="checkFileSize(this);">
+                  <!--<label class="custom-file-label" for="image">Select image...</label> -->
+                </div>
+            </div>
+
+          <div class="submit-btn">
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+    </div>  
+</body>
+
+</html>
