@@ -1,5 +1,6 @@
 # Development API Try outs: Provide Services instead of tools to the customer!  <!-- omit in toc -->
-
+## Design & Development of an Inter-Company Software Collaboration Platform Using S.O.A and RestAPIs
+### FROM MONOLITHIC ARCHITECTURE TO FLEXIBLE MICRO-SERVICES
 Master Thesis results wrt. REST APIs for embedded software development, simulation and test over company boundaries.
 Most of the contents are to get really familar with the topics and provide proposals to professional implementation parties.
 
