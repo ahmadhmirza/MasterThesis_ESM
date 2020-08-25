@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Data-Streaming-Demo</title>
+<style>
+  #data {
+    text-align: left;
+  }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<div id="data">Nothing received yet</div>
+{% for i in data: %}
+<script>
+  $("#data").text("{{ i }}")
+</script>
+{% endfor %}
