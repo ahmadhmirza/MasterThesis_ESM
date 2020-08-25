@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<MSRSW>
+  <CATEGORY>PaVaSt</CATEGORY>
+  <ADMIN-DATA>
+    <COMPANY-DOC-INFOS>
+      <COMPANY-DOC-INFO>
+        <COMPANY-REF>RB</COMPANY-REF>
+        <SDGS>
+          <SDG GID="RBHead-eASEE-Keywords">
+            <SD GID="Filename">FDK-Automation_compu_custom_pavast.xml</SD>
+            <SD GID="Author">Auto-Generated</SD>
+            <SD GID="Function">Configure Customer's Compu_Method</SD>
+            <SD GID="Domain">FDK</SD>
+            <SD GID="User">FDK</SD>
+            <SD GID="Date">2020-07-01</SD>
+            <SD GID="Class">CTDATA</SD>
+            <SD GID="Name">swsh_compu_custom</SD>
+            <SD GID="Variant">MDG1_P1616</SD>
+            <SD GID="Revision">0</SD>
+            <SD GID="Type">XML</SD>
+            <SD GID="State">AVAILABLE</SD>
+            <SD GID="UniqueName"></SD>
+            <SD GID="Component"></SD>
+            <SD GID="Generated"></SD>
+            <SD GID="History"></SD>
+          </SDG>
+        </SDGS>
+      </COMPANY-DOC-INFO>
+    </COMPANY-DOC-INFOS>
+  </ADMIN-DATA>
+  <SW-SYSTEMS>
+    <SW-SYSTEM>
+      <LONG-NAME>EDC/ME(D) 17</LONG-NAME>
+      <SHORT-NAME>MEDC17</SHORT-NAME>
+      <SW-DATA-DICTIONARY-SPEC>
+        <SW-UNITS>
+          <SW-UNIT>
+            <SHORT-NAME>OEM_0137deg C</SHORT-NAME>
+            <SW-UNIT-DISPLAY>deg C</SW-UNIT-DISPLAY>
+            <SI-UNIT>tbd</SI-UNIT>
+          </SW-UNIT>
+          <SW-UNIT>
+            <SHORT-NAME>OEM_0137test_0137unit</SHORT-NAME>
+            <SW-UNIT-DISPLAY>test_unit</SW-UNIT-DISPLAY>
+            <SI-UNIT>tbd</SI-UNIT>
+          </SW-UNIT>
+          <SW-UNIT>
+            <SHORT-NAME>OEM_0137test_0137unit_01372</SHORT-NAME>
+            <SW-UNIT-DISPLAY>test_unit_2</SW-UNIT-DISPLAY>
+            <SI-UNIT>tbd</SI-UNIT>
+          </SW-UNIT>
+        </SW-UNITS>
+        <SW-COMPU-METHODS>
+          <SW-COMPU-METHOD>
+            <SHORT-NAME>Temp_Cels</SHORT-NAME>
+            <CATEGORY>RAT_FUNC</CATEGORY>
+            <SW-UNIT-REF>OEM_0137deg C</SW-UNIT-REF>
+            <SW-COMPU-PHYS-TO-INTERNAL>
+              <SW-COMPU-SCALES>
+                <SW-COMPU-SCALE>
+                  <SW-COMPU-RATIONAL-COEFFS>
+                    <SW-COMPU-NUMERATOR>
+                      <VF>273.14</VF>
+                      <VF>1.0</VF>
+                    </SW-COMPU-NUMERATOR>
+                    <SW-COMPU-DENOMINATOR>
+                      <VF>0.1</VF>
+                      <VF>0.0</VF>
+                    </SW-COMPU-DENOMINATOR>
+                  </SW-COMPU-RATIONAL-COEFFS>
+                </SW-COMPU-SCALE>
+              </SW-COMPU-SCALES>
+            </SW-COMPU-PHYS-TO-INTERNAL>
+          </SW-COMPU-METHOD>
+          <SW-COMPU-METHOD>
+            <SHORT-NAME>ahmad_test_A</SHORT-NAME>
+            <CATEGORY>RAT_FUNC</CATEGORY>
+            <SW-UNIT-REF>OEM_0137test_0137unit</SW-UNIT-REF>
+            <SW-COMPU-PHYS-TO-INTERNAL>
+              <SW-COMPU-SCALES>
+                <SW-COMPU-SCALE>
+                  <SW-COMPU-RATIONAL-COEFFS>
+                    <SW-COMPU-NUMERATOR>
+                      <VF>0.0</VF>
+                      <VF>12.0</VF>
+                    </SW-COMPU-NUMERATOR>
+                    <SW-COMPU-DENOMINATOR>
+                      <VF>6.0</VF>
+                      <VF>0.0</VF>
+                    </SW-COMPU-DENOMINATOR>
+                  </SW-COMPU-RATIONAL-COEFFS>
+                </SW-COMPU-SCALE>
+              </SW-COMPU-SCALES>
+            </SW-COMPU-PHYS-TO-INTERNAL>
+          </SW-COMPU-METHOD>
+          <SW-COMPU-METHOD>
+            <SHORT-NAME>ahmad_test_B</SHORT-NAME>
+            <CATEGORY>RAT_FUNC</CATEGORY>
+            <SW-UNIT-REF>OEM_0137test_0137unit_01372</SW-UNIT-REF>
+            <SW-COMPU-PHYS-TO-INTERNAL>
+              <SW-COMPU-SCALES>
+                <SW-COMPU-SCALE>
+                  <SW-COMPU-RATIONAL-COEFFS>
+                    <SW-COMPU-NUMERATOR>
+                      <VF>0.0</VF>
+                      <VF>6.0</VF>
+                    </SW-COMPU-NUMERATOR>
+                    <SW-COMPU-DENOMINATOR>
+                      <VF>12.0</VF>
+                      <VF>0.0</VF>
+                    </SW-COMPU-DENOMINATOR>
+                  </SW-COMPU-RATIONAL-COEFFS>
+                </SW-COMPU-SCALE>
+              </SW-COMPU-SCALES>
+            </SW-COMPU-PHYS-TO-INTERNAL>
+          </SW-COMPU-METHOD>
+        </SW-COMPU-METHODS>
+      </SW-DATA-DICTIONARY-SPEC>
+      <SW-COMPONENT-SPEC>
+        <SW-COMPONENTS>
+          <SW-FEATURE>
+            <SHORT-NAME>MEDC_Compu_Custom</SHORT-NAME>
+            <CATEGORY>FCT</CATEGORY>
+            <SW-FEATURE-OWNED-ELEMENTS>
+              <SW-FEATURE-ELEMENTS>
+                <SW-CLASS-REFS/>
+                <SW-COMPU-METHOD-REFS>
+                  <SW-COMPU-METHOD-REF>Temp_Cels</SW-COMPU-METHOD-REF>
+                  <SW-COMPU-METHOD-REF>ahmad_test_A</SW-COMPU-METHOD-REF>
+                  <SW-COMPU-METHOD-REF>ahmad_test_B</SW-COMPU-METHOD-REF>
+                </SW-COMPU-METHOD-REFS>
+              </SW-FEATURE-ELEMENTS>
+            </SW-FEATURE-OWNED-ELEMENTS>
+            <SW-FEATURE-INTERFACES>
+              <SW-FEATURE-INTERFACE>
+                <SHORT-NAME>MEDC_Compu_Custom_Ex</SHORT-NAME>
+                <CATEGORY>EXPORT</CATEGORY>
+                <SW-INTERFACE-EXPORTS>
+                  <SW-INTERFACE-EXPORT>
+                    <SW-INTERFACE-EXPORT-SCOPE>
+                      <SW-INTERFACE-EXPORT-LEVEL>PARENT</SW-INTERFACE-EXPORT-LEVEL>
+                    </SW-INTERFACE-EXPORT-SCOPE>
+                    <SW-FEATURE-ELEMENTS>
+                      <SW-SYSTEMCONST-REFS/>
+                    </SW-FEATURE-ELEMENTS>
+                  </SW-INTERFACE-EXPORT>
+                </SW-INTERFACE-EXPORTS>
+              </SW-FEATURE-INTERFACE>
+            </SW-FEATURE-INTERFACES>
+          </SW-FEATURE>
+        </SW-COMPONENTS>
+      </SW-COMPONENT-SPEC>
+    </SW-SYSTEM>
+  </SW-SYSTEMS>
+</MSRSW>

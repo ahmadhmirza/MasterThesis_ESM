@@ -1,0 +1,52 @@
+***************List of COMPU_METHODS - Excel_inputfile ***************
+COMPU_METHODS found: 7
+********************
+NAME : Temp_Cels
+LONG_IDENTIFIER : Engine coolant temperature
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : deg C
+COEFFS : 0.0, 1.0, 273.14, 0.0, 0.0, 0.1
+********************
+NAME : Temp_Cels
+LONG_IDENTIFIER : Engine Oil Temperature 1
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : deg C
+COEFFS : 0.0, 1.0, 273.14, 0.0, 0.0, 0.1
+********************
+NAME : ahmad_test_A
+LONG_IDENTIFIER : Intarder Pilot Lamp State
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : test_unit
+COEFFS : 0.0, 12.0, 0.0, 0.0, 0.0, 6.0
+********************
+NAME : ahmad_test_A
+LONG_IDENTIFIER : Requesting Intarder Pilot Lamp
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : test_unit
+COEFFS : 0.0, 12.0, 0.0, 0.0, 0.0, 6.0
+********************
+NAME : ahmad_test_B
+LONG_IDENTIFIER : Retardation on Driver´s Demand
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : test_unit_2
+COEFFS : 0.0, 6.0, 0.0, 0.0, 0.0, 12.0
+********************
+NAME : ahmad_test_B
+LONG_IDENTIFIER : Requesting Cruise Control Switch−off
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : test_unit_2
+COEFFS : 0.0, 6.0, 0.0, 0.0, 0.0, 12.0
+********************
+NAME : ahmad_test_B
+LONG_IDENTIFIER : Bremsomat Speed
+CONVERSION_TYPE : RAT_FUNC
+FORMAT : %6.3
+UNIT : test_unit_2
+COEFFS : 0.0, 6.0, 0.0, 0.0, 0.0, 12.0
+********************
