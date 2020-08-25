@@ -1,0 +1,19 @@
+# To generate access-ID (API KEY)
+# Script takes two strings to generate the API Key
+generate_AccessID.cmd "Ahmad" "UploadService"
+-------------------------------------------------------------------------
+# To Upload a file to the server
+# call the batch script with the first parameter
+# being the path of the file to be uploaded:
+upload_file_client.cmd C:\Users\MIR6SI\Desktop\upload_samples\test1.jpg
+-------------------------------------------------------------------------
+# To perform CAN-Test
+# call the script wit the two parameters
+# path to a2l file, path to can-xlsx file.
+CAN_Config_Test_UseCase.cmd C:\Users\MIR6SI\Documents\HyAPI\3_Services\_in\dummy.a2l C:\Users\MIR6SI\Documents\HyAPI\3_Services\_in\dummy.xlsx
+------------------------------------------------------------------------
+# Generate UML Diagram
+# call the script with first parameter
+# path to the input source text file
+UseCase_UML_Generation.cmd sequenceDiagram.txt
+------------------------------------------------------------------------

@@ -1,0 +1,98 @@
+Can_ET1RXCanId_C
+
+/begin MEASUREMENT
+
+    signal1
+    ""
+    SWORD
+    Temp_Cels
+    1
+    100
+    -3549.940
+    3003.560
+
+    
+    FORMAT "%8.3"
+    
+    ECU_ADDRESS 0x6000F694
+
+    /begin IF_DATA ETK_XETK DEFAULT_RASTERS 3 /end IF_DATA
+    /begin IF_DATA XCPplus 0x0102 /begin DAQ_EVENT VARIABLE /begin AVAILABLE_EVENT_LIST EVENT 0 EVENT 1 EVENT 2 EVENT 3 /end AVAILABLE_EVENT_LIST /begin DEFAULT_EVENT_LIST EVENT 2 /end DEFAULT_EVENT_LIST /end DAQ_EVENT /end IF_DATA
+/end MEASUREMENT
+
+
+/begin MEASUREMENT
+
+    signal4
+    ""
+    UBYTE
+    OneToOne
+    1
+    100
+    0.00
+    255.0
+
+    
+    FORMAT "%5.1"
+    
+    ECU_ADDRESS 0x60013760
+
+    /begin IF_DATA ETK_XETK DEFAULT_RASTERS 3 /end IF_DATA
+    /begin IF_DATA XCPplus 0x0102 /begin DAQ_EVENT VARIABLE /begin AVAILABLE_EVENT_LIST EVENT 0 EVENT 1 EVENT 2 EVENT 3 /end AVAILABLE_EVENT_LIST /begin DEFAULT_EVENT_LIST EVENT 2 /end DEFAULT_EVENT_LIST /end DAQ_EVENT /end IF_DATA
+/end MEASUREMENT
+
+/begin MEASUREMENT
+
+    signal5
+    ""
+    UBYTE
+    OneToOne
+    1
+    100
+    0.00
+    255.0
+
+    
+    FORMAT "%5.1"
+    
+    ECU_ADDRESS 0x60013760
+
+    /begin IF_DATA ETK_XETK DEFAULT_RASTERS 3 /end IF_DATA
+    /begin IF_DATA XCPplus 0x0102 /begin DAQ_EVENT VARIABLE /begin AVAILABLE_EVENT_LIST EVENT 0 EVENT 1 EVENT 2 EVENT 3 /end AVAILABLE_EVENT_LIST /begin DEFAULT_EVENT_LIST EVENT 2 /end DEFAULT_EVENT_LIST /end DAQ_EVENT /end IF_DATA
+/end MEASUREMENT
+
+/begin COMPU_METHOD
+
+    Temp_Cels
+    ""
+    RAT_FUNC
+    "%6.2"
+    "deg C"
+
+    COEFFS 0 10 2731.4 0 0 1 
+    
+/end COMPU_METHOD
+
+/begin COMPU_METHOD
+
+    Temp_Cels1
+    ""
+    RAT_FUNC
+    "%6.2"
+    "deg C"
+
+    COEFFS 0 1 0 0 0 1 
+    
+/end COMPU_METHOD
+
+/begin COMPU_METHOD
+
+    OneToOne
+    ""
+    RAT_FUNC
+    "%6.2"
+    "deg C"
+
+    COEFFS 0 1 0 0 0 1 
+    
+/end COMPU_METHOD
