@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>HyAPI-MLtk-Workspace</title>
+	<meta content="en" http-equiv="Content-Language" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<!-- to adapt content position accoding to screen size-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script type="text/javascript">	  	
+
+
+	function addRows(workflowList){
+		var workflow_details = [];
+		var workflows =[];
+
+
+		var wrkFlow_1= ["test","1388","idle","dummy"];
+		var wrkFlow_2= ["test_1","1297","running","dumbo"];
+		var test= [wrkFlow_1,wrkFlow_2];
+		
+		var tableRef = document.getElementById('workflowDetails').getElementsByTagName('tbody')[0];
+		console.log(workflowList);
+		console.log("test");
+		var t = "";
+		for (var i = 0; i < workflowList.length; i++){
+		      var tr = "<tr>";
+		      tr += "<td>"+test[i][0]+"</td>";
+		      tr += "<td>"+test[i][1]+"</td>";
+		      tr += "<td>"+test[i][2]+"</td>";
+		      tr += "<td>"+test[i][3]+"</td>";
+		      tr += "</tr>";
+		      t += tr;
+		}
+		tableRef.innerHTML += t;        
+		}
+
+		function updateDiv()
+		{ 
+			$( "#here" ).load(window.location.href + " #here" );
+		}
+
+	</script>
+	<style type="text/css">
+	.auto-style2 {
+		border-style: solid;
+		border-width: 1px;
+	}
+	</style>
+		<img style="position: fixed; left: 1200px; top: 20px" src="../static/assets/fhdortmund.png">
+		<img style="position: fixed; left: 1200px; top: 100px" src="../static/assets/RB.jpeg">
+</head>
+
+<body style="background-color:#9CCC65; width: 1137px;">
+<h2 style="text-align: center;">HyAPI Machine Learning Toolkit</h2>
+
+<h3>User Details</h3>
+<div style="margin-left: 20px;">
+	<p><label >User Name: </label> {{ userName }}</p>
+	<p><label >API-Key: </label> {{ apiKey }}</p>
+	<p><label >Encoding-Key: </label> {{ encKey }}</p>
+</div>
+
+<hr>
+
+<h3>Workspace (actual):</h3>
+<table class="workSpaces" style="width: 100%; background-color:#f9ece8; margin-left: 20px;" id="workflowDetails">
+	<thead>
+	<tr>
+	<!-- referance: https://stackoverflow.com/questions/38393040/populate-html-table-with-javascript-array -->
+		<td class="auto-style2" style="width: 258px">Name</td>
+		<td class="auto-style2" style="width: 432px">ID</td>
+		<td class="auto-style2" style="width: 162px">Status</td>
+		<td class="auto-style2">Base-Model</td>
+	</tr>
+	</thead>
+	<tbody>
+		{% for workspace in workflowsList %}
+			<tr>
+				<td><a href="{{ workflowUrl }}/{{ workflowsList[workspace]["workflow_ID"] }}">{{ workflowsList[workspace]["workflow_Name"] }}</a></td>
+				<td>{{ workflowsList[workspace]["workflow_ID"] }}</td>
+				<td><img src="http://192.168.0.192:5000/hyapi/service/ML/proc-status-graphical/{{ workflowsList[workspace]["process_ID"] }}"></td>
+				<td>{{ workflowsList[workspace]["baseModel"] }}</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+
+
+<hr>
+<hr>
+
+<div id="Form">
+	<h3>Create New Workflow:</h2>
+	{% block content %}
+	<form action="http://192.168.0.192:5000/hyapi/AI/toolkit/wokspace/{{ userName }}/{{ apiKey }}/{{ accessToken }}/create-new-workflow" 
+		method="POST" enctype="multipart/form-data" style="margin-left: 20px;">
+		{{ form.hidden_tag() }}
+		<table>
+			<tr>
+				<td><label >Workflow name: </label></td>
+				<td><label >Base Model (01 = SSD Inception v2):</label></td>
+			</tr>
+			<tr>
+				<td size="32" style="width: 333px">{{ form.workflowName }}</td>
+				<td size="32" style="width: 333px">{{ form.baseModel }}</td>
+			</tr>
+			<tr><td><div class="submit-btn"
+				style="width: 136px">{{ form.submit() }}</div>
+				</td>
+			</tr>
+		</table>
+		
+		<div> {% if form.errors %}
+			  {{ form.errors }}
+			  {% endif %}
+		</div>
+		{% endblock %}
+</div>
+
+<p></p>
+<hr>
+<div style="margin-left: 20px;" >{{status_message}}</div>
+</body>
+
+</html>

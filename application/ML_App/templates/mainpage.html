@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>HyAPI-Machine Learning Toolkit</title>
+	<meta content="en" http-equiv="Content-Language" />
+	<!-- to adapt content position accoding to screen size-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="#" />
+	<script>
+	  function saveToSession(key,value) {
+	  	apiKey = document.getElementById("accessKey").value
+	  	<!--TODO: move sessionStorage data to localStorage -->
+	    sessionStorage.setItem("apiKey", apiKey );
+	    encKey = document.getElementById("encodingKey").value
+	    sessionStorage.setItem("encodingKey", encKey );
+	  	}
+	  	
+	  function printVal(){
+		  console.log("hereee")
+	  	console.log(sessionStorage.getItem("apiKey"));
+	  	console.log(sessionStorage.getItem("encodingKey"));
+	  	}
+	</script>
+		
+		<style>
+			.btn {
+			  border: none;
+			  background-color: rgb(203, 226, 100);
+			  margin-left: 28px;
+			  padding: 14px 28px;
+			  font-size: 16px;
+			  cursor: pointer;
+			  display: inline-block;
+			}
+			.success:hover {
+			background-color: #4CAF50;
+			color: rgb(255, 255, 255);
+			}
+			.info:hover {
+  			background: #2196F3;
+  			color: white;
+			}
+			.warning:hover {
+			background: #ff9800;
+			color: white;
+			}
+}
+		</style>
+
+		<img style="position: fixed; left: 1200px; top: 20px" src="./static/assets/fhdortmund.png">
+		<img style="position: fixed; left: 1200px; top: 100px" src="./static/assets/RB.jpeg">
+</head>
+
+<body style="background-color:#9CCC65;">
+	<h2 style="text-align: center;">HyAPI Machine Learning Toolkit</h2>
+	<div id="Main">
+
+		
+		{% block content %}
+		<!--<form action="http://localhost:5000/hyapi/AI/toolkit/login" -->
+		<form 
+			style="margin-left: 80px; margin-top: 80px; background-color:#F1F8E9;
+			width:400px; height: 300px;border-style: solid" id="mainForm" >
+			<p><button class="btn success"><a href="{{ trainingServiceURL }}">Training Service Demo</button></p>
+			<p><button class="btn info"><a href="{{ objectDetectionURL }}"></a>Object Detection Demo</button></p>
+			<p><button class="btn warning"><a href="{{ IasURL }}"></a>Infrastructure as Service Demo</button></p>
+		</form>
+		<label for="mainForm" style="position: fixed; left: 90px; top: 100px" >Machine Learning Demo Services</label>
+	</div>
+	<div id="statusMsgs">
+	<p>{{status}}</p>
+	</div>
+	{% endblock %}
+	</body>
+</html>

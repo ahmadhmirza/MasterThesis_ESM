@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>HyAPI-MLtk-WorkflowDetails</title>
+	<meta content="en" http-equiv="Content-Language" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<!-- to adapt content position accoding to screen size-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script>	  	
+
+	</script>
+
+	<style type="text/css">
+	.auto-style2 {
+		text-align: left;
+		border-style: solid;
+		border-width: 1px;
+		height: 60px;
+	}
+	.auto-style3 {
+		width: 150px;
+		height:30px;
+		box-shadow: 1px 2px;
+	}
+	.auto-style5 {
+		border-style: solid;
+		border-width: 1px;
+		text-align: left;
+		background-color:#f9ece8
+		}
+	</style>
+
+	<img style="position: fixed; left: 1200px; top: 20px" src="../static/assets/fhdortmund.png">
+	<img style="position: fixed; left: 1200px; top: 100px" src="../static/assets/RB.jpeg">
+	</head>
+
+<body style="background-color:#9CCC65; width: 1137px; height: 7px;">
+<h2 style="text-align: center;">HyAPI Machine Learning Toolkit</h2>
+<div style="position: relative; left: 23px; top: 36px">
+	<h1 style="position: absolute; left: -10px; top: -15px; width: 1137px; height: 45px; z-index: 1;">Workflow Details</h1>
+	
+	<table class="auto-style5" style="width: 603px; height: 267px; position: absolute; top: 51px; left: 25px">
+	    <!--<caption>{{customerName}}</caption>-->
+	    <thead>
+	        <tr>
+	            <th class="auto-style2" style="height: 60px">Name: </th>
+	            <th class="auto-style2" style="height: 43px; width: 472px">{{workflowName}}</th>       
+	        </tr>
+	        <tr>
+	            <th class="auto-style2" style="height: 50px">WorkFlow ID:</th>
+	            <th class="auto-style2" style="width: 472px; height: 50px">{{workflowID}}</th>
+	        </tr>
+	        <tr>
+	            <th class="auto-style2" style="height: 56px">Base Model:</th>
+	            <th class="auto-style2" style="width: 472px; height: 56px">{{baseModel}}</th>
+	        </tr>
+	        <tr>
+	            <th class="auto-style2">Status:</th>
+	            <th class="auto-style2" style="width: 472px"><img src="http://192.168.0.192:5000/hyapi/service/ML/proc-status-graphical/{{ processID }}"></img></th>
+	        </tr>
+	    </thead>
+	    <tbody> </tbody>
+	</table>
+	
+	<form  method="POST" 
+	action="http://192.168.0.192:5000/hyapi/AI/toolkit/wokspace/{{userName}}/{{accessID}}/{{accessToken}}/{{workflowID}}/upload-dataset" 
+	enctype="multipart/form-data">
+		<label for="hyapifile_dataset" style="position: fixed; left: 60px; top: 470px" >Choose Dataset Archive:</label>
+		<input type="file" class="auto-style3" name="hyapifile_dataset" id="hyapifile_dataset" 	accept=".zip" style="width:500px ;position: fixed; left: 60px; top: 500px">
+		<label for="hyapifile_ann" style="position: fixed; left: 60px; top: 550px" >Choose Annotations Archive:</label>
+		<input type="file" class="auto-style3" name="hyapifile_ann" id="hyapifile_ann" 	accept=".zip" style="width:500px ;position: fixed; left: 60px; top: 580px">
+		<button type="submit" class="auto-style3" style="position: fixed; left: 60px; top: 650px">Upload Dataset</button>
+	</form>
+
+	<form method="POST" action="http://192.168.0.192:5000/hyapi/AI/toolkit/wokspace/{{userName}}/{{accessID}}/{{accessToken}}/{{workflowID}}/start-training/e80377bf5d6769691420942118bfc0c6">
+		<input class="auto-style3" style="position: fixed; left: 220px;  top: 650px" 	type="submit" value="Start Training">
+	</form>
+
+	<form>
+		<input class="auto-style3" name="exportModel" 	style="position: fixed; left: 380px; top: 650px" 	type="button" value="Export Model">
+	</form>
+	<form action="http://192.168.0.192:5000/hyapi/AI/toolkit/wokspace/{{userName}}/{{accessID}}/{{accessToken}}/{{workflowID}}">
+		<input class="auto-style3" style="position: fixed; left: 540px; top: 650px" 	type="submit" value="Refresh Status">
+	</form>
+
+	<div id="console-holder" style="position: fixed; left: 700px; top: 90px; width: 400px; height: 200px; z-index: 2;">
+		<h2>Console</h2>
+			<div id="console" style="height: 237px; background-color:#311B92 ;color:#B2FF59">
+				{{status_message}}
+			</div>
+	</div>
+</div>
+</body>
+
+</html>
