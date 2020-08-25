@@ -1,0 +1,20 @@
+###  OBJECT DETECTION CONTAINER ###
+To build the image from Dockerfile:
+sudo docker build -t tensorflow .
+
+To run a docker image:
+sudo docker run --name tensorflow -p 8888:8888 -d tensorflow
+
+To stop a running docker container:
+sudo docker rm -f tensorflow
+
+###  MODEL-TRAINING CONTAINER ###
+
+To build the image from Dockerfile:
+sudo docker build -t train_tf_model .
+
+To run a docker image:
+sudo docker run --rm --name train_tf_model /home/ahmad/Desktop/containerMount/train_tf_model/:/datavol:rw tensorflow
+
+To stop a running docker container:
+sudo docker rm -f tensorflow

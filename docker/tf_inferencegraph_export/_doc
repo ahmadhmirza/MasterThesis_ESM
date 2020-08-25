@@ -1,0 +1,75 @@
+###### COMMANDS ######
+
+###To build the image from Dockerfile:
+sudo docker build -t train-tf-model .
+
+###To run a docker image:
+sudo docker run --rm --name train-tf-model -v /home/ahmad/Desktop/containerMount/MLC_Service_Docker_Interface:/datavol:rw train-tf-model .
+-------------------------------------------------------------------
+sudo docker run --rm --name export-tf-inferencegraph -v /home/ahmad/Desktop/containerMount/MLC_Service_Docker_Interface:/datavol:rw export-tf-inferencegraph --trained_checkpoint_prefix /datavol/training/model.ckpt-500
+
+###To stop a running docker container:
+sudo docker rm -f train-tf-model
+
+###To push to docker-hub
+sudo docker image tag train-tf-model ahmadhmirza/train-tf-model:1.0
+sudo docker image push ahmadhmirza/train-tf-model:1.0
+-------------------------------------------------------
+sudo docker image tag export-tf-inferencegraph ahmadhmirza/export-tf-inferencegraph:1.0
+sudo docker image push ahmadhmirza/export-tf-inferencegraph:1.0
+
+####To pull from docker hub
+docker pull <reponame:tag>
+
+###To delete/clean docker data
+docker system prune -a
+#remove images
+docker images -a
+docker rmi $(docker images -a -q)
+#remove containers
+docker ps -a
+docker rm ID_or_Name ID_or_Name
+    docker stop $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
+
+##########################
+
+The datavolume of the container is mounted to the disk location:
+ /home/ahmad/Desktop/containerMount/train_tf_model
+
+ This disk location should have the files necessary for training process:
+
+ * annotations [dir]
+ *** label_map.pbtxt 
+ *** test.record
+ *** test.labels.csv
+ *** train.record
+ *** train.labels.csv
+
+ * dataset [dir]
+ ** train  [dir]
+ ** test   [dir]
+
+ * pre-trained-model [dir]
+ * trained-inference-graphs [dir]
+ * training [dir]
+
+ * pipeline.config [file]
+
+run the docker image, and the training process will start.
+
+
+#################################
+
+running docker container from python
+
+sudo docker system prune
+python -u DockerInterface.py
+
+
+###############################
+test commands:
+newgrp docker 
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+python -u DockerInterface.py
